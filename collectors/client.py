@@ -2,7 +2,7 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
 
-def get_client(spotify_settings) -> spotipy.Spotify:
+def get_client(spotify_settings) -> spotipy.Spotify | None:
 
     try:
         sp = spotipy.Spotify(
@@ -15,5 +15,6 @@ def get_client(spotify_settings) -> spotipy.Spotify:
         )
     except Exception as e:
         print(f"Unable to authenticate: {e}")
+        sp = None
 
     return sp
