@@ -1,8 +1,9 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
+from settings import SpotifyAuth
 
 
-def get_client(spotify_settings) -> spotipy.Spotify | None:
+def get_client(spotify_settings: SpotifyAuth) -> spotipy.Spotify | None:
 
     try:
         sp = spotipy.Spotify(
